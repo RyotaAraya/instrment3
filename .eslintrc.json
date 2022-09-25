@@ -12,6 +12,7 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "import/order": [2, { "alphabetize": { "order": "asc" } }]
+    "import/order": [2, { "alphabetize": { "order": "asc" } }],
+    "react/no-unescaped-entities": 0
   }
 }
