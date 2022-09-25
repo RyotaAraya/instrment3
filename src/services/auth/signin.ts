@@ -1,5 +1,5 @@
 // typesは後ほど定義
-import { ApiContext, User } from 'types/data'
+import { ApiContext, User } from 'types'
 // 先ほど定義したsrc/utils/index.tsから読み込み
 import { fetcher } from 'utils'
 
