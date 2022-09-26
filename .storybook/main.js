@@ -23,6 +23,7 @@ module.exports = {
         configFile: path.resolve(__dirname, '../tsconfig.json'),
       }),
     ]
+
     return config
   },
 }

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components'
-import { Responsive } from 'types/styles'
+import { Responsive } from 'types'
 import {
   toPropValue,
   Color,
