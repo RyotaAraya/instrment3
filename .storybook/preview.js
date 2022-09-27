@@ -19,7 +19,8 @@ export const GlobalStyle = createGlobalStyle`
   textarea {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
   * {
     box-sizing: border-box;
@@ -31,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-//Themeの適用
+// Themeの適用
 addDecorator((story) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
@@ -39,7 +40,7 @@ addDecorator((story) => (
   </ThemeProvider>
 ))
 
-//next/imageの差し替え
+// next/imageの差し替え
 const OriginalNextImage = NextImage.default
 
 Object.defineProperty(NextImage, 'default', {
@@ -50,8 +51,4 @@ Object.defineProperty(NextImage, 'default', {
     ) : (
       <OriginalNextImage {...props} unoptimized />
     ),
-})
-
-Object.defineProperty(NextImage, '__esModule', {
-  value: true,
 })

@@ -4,7 +4,7 @@ const letterSpacings: string[] = [
   '0.08px',
   '0.09px',
   '0.1px',
-  '0.11px',
+  '0.1px',
 ]
 
 export default letterSpacings
