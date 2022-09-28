@@ -5,7 +5,7 @@ export default {
   title: 'Organisms/ProductForm',
   argTypes: {
     onProductSave: {
-      description: '出品ボタンを押した時のイベントハンドラ',
+      description: '登録ボタンを押した時のイベントハンドラ',
       table: {
         type: { summary: 'function' },
       },

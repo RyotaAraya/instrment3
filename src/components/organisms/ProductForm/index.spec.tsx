@@ -60,8 +60,8 @@ describe('ProductForm', () => {
       ) as HTMLInputElement
       fireEvent.change(inputPriceNode, { target: { value: '100' } })
 
-      // 出品ボタンをクリック
-      fireEvent.click(screen.getByText('出品'))
+      // 登録ボタンをクリック
+      fireEvent.click(screen.getByText('登録'))
     })
 
     // handleProductSaveが呼ばれていることを確認
@@ -77,8 +77,8 @@ describe('ProductForm', () => {
       ) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: '商品' } })
 
-      // 出品ボタンをクリック
-      fireEvent.click(screen.getByText('出品'))
+      // 登録ボタンをクリック
+      fireEvent.click(screen.getByText('登録'))
     })
 
     // handleProductSaveが呼ばれていないことを確認

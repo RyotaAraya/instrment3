@@ -20,13 +20,13 @@ export type ProductFormData = {
 
 interface ProductFormProps {
   /**
-   * 出品ボタンを押した時のイベントハンドラ
+   * 登録ボタンを押した時のイベントハンドラ
    */
   onProductSave?: (data: ProductFormData) => void
 }
 
 /**
- * 商品投稿フォーム
+ * 不具合通知フォーム
  */
 const ProductForm = ({ onProductSave }: ProductFormProps) => {
   // React Hook Formの使用
@@ -45,7 +45,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
       <Box marginBottom={3}>
         <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
-            商品の写真
+            不具合計器の写真
           </Text>
         </Box>
         {/* 商品画像の入力 */}
@@ -72,7 +72,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
       <Box marginBottom={3}>
         <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
-            商品情報
+            計器情報
           </Text>
         </Box>
         <Box marginBottom={1}>
@@ -195,7 +195,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
       </Box>
       <Button width="100%" type="submit">
-        出品
+        登録
       </Button>
     </form>
   )

@@ -94,7 +94,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
           <Separator />
           <Box paddingTop={1}>
             <Text as="h2" variant="large" marginTop={0}>
-              出品者
+              登録者
             </Text>
             <Link href={`/users/${product.owner.id}`}>
               <a>
@@ -115,7 +115,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             flexDirection="column"
             height={{ base: '', md: '100%' }}
           >
-            {/* 商品概要を表示、改行ごとにテキストコンポーネントでラップ */}
+            {/* 不具合計器通知概要を表示、改行ごとにテキストコンポーネントでラップ */}
             <Box>
               {product.description
                 .split('\n')
