@@ -3,7 +3,7 @@ import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import CheckBox from 'components/molecules/CheckBox'
 
-type Item = {
+export type Item = {
   label: string
   name: string
 }
