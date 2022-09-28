@@ -109,18 +109,6 @@ const Header = () => {
             </Box>
           </NavLink>
           <NavLink>
-            <Link href="/cart" passHref>
-              <Anchor as="a">
-                <BadgeIconButton
-                  icon={<ShoppingCartIcon size={24} />}
-                  size="24px"
-                  badgeContent={cart.length === 0 ? undefined : cart.length}
-                  badgeBackgroundColor="primary"
-                />
-              </Anchor>
-            </Link>
-          </NavLink>
-          <NavLink>
             {(() => {
               // 認証していたらアイコンを表示
               if (authUser) {
