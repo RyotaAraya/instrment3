@@ -43,7 +43,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
   // 商品
   const data = useProduct(context, { id, initial })
 
-  // カートに追加したら、自動的にカートページに遷移する
+  // 作業中にしたら作業中ページに遷移する
   const handleAddToCartButtonClick = () => {
     router.push('/cart')
   }

@@ -25,7 +25,7 @@ const AddToCartButtonContainer = ({
     const productId = Number(product.id)
     const result = cart.findIndex((v) => v.id === productId)
 
-    // 同じ商品がカートに存在しない場合はカートに追加する
+    // 同じ商品がカートに存在しない場合は追加する
     if (result === -1) {
       addProductToCart(product)
     }

@@ -32,7 +32,7 @@ export const ShoppingCartContextProvider = ({
   const products: Product[] = []
   const [cartState, dispatch] = useReducer(shopReducer, products)
 
-  // 商品をカートに追加
+  // 計装品を作業リストに追加
   const addProductToCart = (product: Product) => {
     dispatch({ type: ADD_PRODUCT, payload: product })
   }
