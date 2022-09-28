@@ -20,7 +20,8 @@ import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 const HeaderRoot = styled.header`
   height: 88px;
   padding: ${({ theme }) => theme.space[2]} 0px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.primaryDark};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.primaryDark};
 `
 
 // ナビゲーション
@@ -86,6 +87,13 @@ const Header = () => {
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/shoes" passHref>
                 <Anchor as="a">シューズ</Anchor>
+              </Link>
+            </Box>
+          </NavLink>
+          <NavLink>
+            <Box display={{ base: 'none', md: 'block' }}>
+              <Link href="/search/flameDetector" passHref>
+                <Anchor as="a">火炎検知器</Anchor>
               </Link>
             </Box>
           </NavLink>

@@ -23,6 +23,7 @@ const categoryNameDict: Record<Category, string> = {
   book: '本',
   shoes: 'シューズ',
   clothes: 'トップス',
+  flameDetector: '火炎検知器',
 }
 
 const SearchPage: NextPage = () => {

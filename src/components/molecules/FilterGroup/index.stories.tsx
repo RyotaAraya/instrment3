@@ -45,5 +45,6 @@ Standard.args = {
     { label: 'Clothes', name: 'clothes' },
     { label: 'Books', name: 'books' },
     { label: 'Shoes', name: 'shoes' },
+    { label: 'FlameDetector', name: 'flameDetector' },
   ],
 }

@@ -133,6 +133,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
                   { value: 'shoes', label: 'シューズ' },
                   { value: 'clothes', label: 'トップス' },
                   { value: 'book', label: '本' },
+                  { value: 'flameDetector', label: '火炎検知器' },
                 ]}
                 hasError={!!error}
                 value={value}
