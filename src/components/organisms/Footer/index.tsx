@@ -31,11 +31,6 @@ const Footer = () => {
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">採用</Anchor>
-              </Link>
-            </Box>
-            <Box marginBottom={2}>
-              <Link href="/" passHref>
                 <Anchor as="a">お知らせ</Anchor>
               </Link>
             </Box>
@@ -56,18 +51,13 @@ const Footer = () => {
                 <Anchor as="a">プライバシーポリシー</Anchor>
               </Link>
             </Box>
-            <Box marginBottom={2}>
-              <Link href="/" passHref>
-                <Anchor as="a">配送と返品</Anchor>
-              </Link>
-            </Box>
           </nav>
         </Box>
         <Box minWidth={{ base: '100%', md: '120px' }}>
           <nav>
             <Anchor
               as="a"
-              href="https://github.com/gihyo-book/ts-nextbook-app"
+              href="https://github.com/RyotaAraya/instrment3"
               target="_blank"
             >
               <GitHubIcon size={22} />
@@ -76,7 +66,7 @@ const Footer = () => {
         </Box>
       </Flex>
       <Box paddingTop={3} paddingBottom={2}>
-        <Text>© 2021 Gijutsuhyoronsha Co., Ltd.. All rights reserved.</Text>
+        <Text>Instrment3 All rights reserved.</Text>
       </Box>
     </footer>
   )
