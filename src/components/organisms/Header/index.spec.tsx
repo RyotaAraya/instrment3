@@ -27,7 +27,7 @@ const authUser: User = {
 // ダミー商品
 const product: Product = {
   id: 1,
-  category: 'book',
+  category: 'flowmeter',
   title: 'Product',
   description: '',
   imageUrl: '/images/sample/1.jpg',

@@ -23,9 +23,9 @@ import useProduct from 'services/products/use-product'
 import type { ApiContext, Category } from 'types'
 
 const categoryNameDict: Record<Category, string> = {
-  book: '本',
-  shoes: 'シューズ',
-  clothes: 'トップス',
+  flowmeter: '流量計',
+  pressureGauge: '圧力計',
+  thermometer: '温度計',
   flameDetector: '火炎検知器',
 }
 

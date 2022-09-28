@@ -42,9 +42,9 @@ export const Standard = Template.bind({})
 Standard.args = {
   title: 'All categories',
   items: [
-    { label: 'Clothes', name: 'clothes' },
-    { label: 'Books', name: 'books' },
-    { label: 'Shoes', name: 'shoes' },
+    { label: 'flowmeterProducts', name: 'flowmeterProducts' },
+    { label: 'pressureGaugeProducts', name: 'pressureGaugeProducts' },
+    { label: 'thermometerProducts', name: 'thermometerProducts' },
     { label: 'FlameDetector', name: 'flameDetector' },
   ],
 }

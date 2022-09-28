@@ -71,22 +71,22 @@ const Header = () => {
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Link href="/search/clothes" passHref>
-                <Anchor as="a">トップス</Anchor>
+              <Link href="/search/flowmeter" passHref>
+                <Anchor as="a">流量計</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Link href="/search/book" passHref>
-                <Anchor as="a">本</Anchor>
+              <Link href="/search/pressureGauge" passHref>
+                <Anchor as="a">圧力計</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Link href="/search/shoes" passHref>
-                <Anchor as="a">シューズ</Anchor>
+              <Link href="/search/thermometer" passHref>
+                <Anchor as="a">温度計</Anchor>
               </Link>
             </Box>
           </NavLink>

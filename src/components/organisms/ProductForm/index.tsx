@@ -127,13 +127,13 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             control={control}
             name="category"
             rules={{ required: true }}
-            defaultValue="shoes"
+            defaultValue="flowmeter"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <Dropdown
                 options={[
-                  { value: 'shoes', label: 'シューズ' },
-                  { value: 'clothes', label: 'トップス' },
-                  { value: 'book', label: '本' },
+                  { value: 'flowmeter', label: '流量計' },
+                  { value: 'pressureGauge', label: '圧力計' },
+                  { value: 'thermometer', label: '温度計' },
                   { value: 'flameDetector', label: '火炎検知器' },
                 ]}
                 hasError={!!error}

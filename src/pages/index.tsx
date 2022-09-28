@@ -12,9 +12,9 @@ import { ApiContext, Product } from 'types'
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const HomePage: NextPage<HomePageProps> = ({
-  bookProducts,
-  clothesProducts,
-  shoesProducts,
+  flowmeterProducts,
+  pressureGaugeProducts,
+  thermometerProducts,
   flameDetectorProducts,
 }: HomePageProps) => {
   // 商品カードカルーセルをレンダリング
@@ -88,21 +88,21 @@ const HomePage: NextPage<HomePageProps> = ({
         >
           <Box marginBottom={3}>
             <Text as="h2" variant="large">
-              トップス
+              流量計
             </Text>
-            {renderProductCardCarousel(clothesProducts)}
+            {renderProductCardCarousel(flowmeterProducts)}
           </Box>
           <Box marginBottom={3}>
             <Text as="h2" variant="large">
-              本
+              圧力計
             </Text>
-            {renderProductCardCarousel(bookProducts)}
+            {renderProductCardCarousel(pressureGaugeProducts)}
           </Box>
           <Box>
             <Text as="h2" variant="large">
-              シューズ
+              温度計
             </Text>
-            {renderProductCardCarousel(shoesProducts)}
+            {renderProductCardCarousel(thermometerProducts)}
           </Box>
           <Box>
             <Text as="h2" variant="large">
@@ -122,22 +122,23 @@ export const getStaticProps: GetStaticProps = async () => {
   }
   // 各商品のトップ6個を取得し、静的ページを作成
   // 60秒でrevalidateな状態にし、静的ページを更新する
-  const [clothesProducts, bookProducts, shoesProducts, flameDetectorProducts] =
-    await Promise.all([
-      getAllProducts(context, { category: 'clothes', limit: 6, page: 1 }),
-      getAllProducts(context, { category: 'book', limit: 6, page: 1 }),
-      getAllProducts(context, { category: 'shoes', limit: 6, page: 1 }),
-      getAllProducts(context, { category: 'flameDetector', limit: 6, page: 1 }),
-    ])
-
-  console.log('shoesProducts', shoesProducts)
-  console.log('flameDetectorProducts', flameDetectorProducts)
+  const [
+    flowmeterProducts,
+    pressureGaugeProducts,
+    thermometerProducts,
+    flameDetectorProducts,
+  ] = await Promise.all([
+    getAllProducts(context, { category: 'flowmeter', limit: 6, page: 1 }),
+    getAllProducts(context, { category: 'pressureGauge', limit: 6, page: 1 }),
+    getAllProducts(context, { category: 'thermometer', limit: 6, page: 1 }),
+    getAllProducts(context, { category: 'flameDetector', limit: 6, page: 1 }),
+  ])
 
   return {
     props: {
-      clothesProducts,
-      bookProducts,
-      shoesProducts,
+      flowmeterProducts,
+      pressureGaugeProducts,
+      thermometerProducts,
       flameDetectorProducts,
     },
     revalidate: 60,

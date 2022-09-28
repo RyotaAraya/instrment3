@@ -1,5 +1,9 @@
 // 商品カテゴリ
-export type Category = 'shoes' | 'clothes' | 'book' | 'flameDetector'
+export type Category =
+  | 'flowmeter'
+  | 'pressureGauge'
+  | 'thermometer'
+  | 'flameDetector'
 // 商品の状態
 export type Condition = 'new' | 'used'
 

@@ -21,9 +21,9 @@ const Anchor = styled(Text)`
 `
 
 const categoryNameDict: Record<Category, string> = {
-  book: '本',
-  shoes: 'シューズ',
-  clothes: 'トップス',
+  flowmeter: '流量計',
+  pressureGauge: '圧力計',
+  thermometer: '温度計',
   flameDetector: '火炎検知器',
 }
 
