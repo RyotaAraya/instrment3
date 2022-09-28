@@ -7,6 +7,7 @@ import Box from 'components/layout/Box'
 import Dropdown from 'components/molecules/Dropdown'
 import InputImages, { FileData } from 'components/molecules/InputImages'
 import type { Category, Condition } from 'types'
+import { PLANTS } from 'utils/consts'
 
 export type ProductFormData = {
   image: FileData[]
@@ -150,9 +151,9 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            商品の状態
+            プラント名
           </Text>
-          {/* 商品の状態のドロップダウン */}
+          {/* プラント名のドロップダウン */}
           <Controller
             control={control}
             name="condition"
@@ -160,20 +161,17 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             defaultValue="used"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <Dropdown
-                options={[
-                  { value: 'used', label: '中古' },
-                  { value: 'new', label: '新品' },
-                ]}
+                options={PLANTS}
                 hasError={!!error}
                 value={value ?? 'used'}
-                placeholder="Please select condition"
+                placeholder="プラント名を選択してください"
                 onChange={(v) => onChange(v?.value)}
               />
             )}
           />
           {errors.condition && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              商品の状態の入力は必須です
+              プラント名の入力は必須です
             </Text>
           )}
         </Box>
