@@ -37,7 +37,7 @@ const CartPage: NextPage = () => {
             </Text>
             {/*
               カートコンテナ
-              カートの中にある商品を表示、購入、削除
+              カートの中にある計器を表示、購入、削除
             */}
             <CartContainer />
           </Box>

@@ -40,7 +40,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
   product: initial,
 }: ProductPageProps) => {
   const router = useRouter()
-  // 商品
+  // 計器
   const data = useProduct(context, { id, initial })
 
   // 作業中にしたら作業中ページに遷移する
@@ -94,7 +94,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
           <Separator />
           <Box paddingTop={1}>
             <Text as="h2" variant="large" marginTop={0}>
-              登録者
+              不具合計器登録者
             </Text>
             <Link href={`/users/${product.owner.id}`}>
               <a>
@@ -127,7 +127,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             </Box>
             {/*
               カート追加ボタンコンテナ
-              ボタンを押されたらShoppingCartContextに商品を追加する
+              ボタンを押されたらShoppingCartContextに計器を追加する
             */}
             <AddToCartButtonContainer
               product={product}
@@ -144,7 +144,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const context: ApiContext = {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }
-  // 商品からパスを生成
+  // 計器からパスを生成
   const products = await getAllProducts(context)
   const paths = products.map((p) => `/products/${p.id}`)
 
@@ -162,7 +162,7 @@ export const getStaticProps: GetStaticProps = async ({
     throw new Error('params is undefined')
   }
 
-  // 商品を取得し、静的ページを作成
+  // 計器を取得し、静的ページを作成
   // 10秒でstaleな状態にし、静的ページを更新する
   const productId = Number(params.id)
   const product = await getProduct(context, { id: productId })

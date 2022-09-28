@@ -16,13 +16,13 @@ interface ProductCardListContainerProps {
    */
   category?: Category
   /**
-   * 検索クエリ - 商品の状態
+   * 検索クエリ - 計器の状態
    */
   conditions?: Condition[]
 }
 
 /**
- * 商品カードリストコンテナ
+ * 計器カードリストコンテナ
  */
 const ProductCardListContainer = ({
   category,
@@ -52,7 +52,7 @@ const ProductCardListContainer = ({
           <Box key={p.id}>
             <Link href={`/products/${p.id}`} passHref>
               <a>
-                {/* 商品カード */}
+                {/* 計器カード */}
                 <ProductCard
                   variant="listing"
                   title={p.title}

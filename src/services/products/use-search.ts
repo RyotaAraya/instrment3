@@ -3,11 +3,11 @@ import type { ApiContext, Category, Condition, Product } from 'types'
 
 export type UseSearchProps = {
   /**
-   * 商品カテゴリ
+   * 計器カテゴリ
    */
   category?: Category
   /**
-   * 商品状態
+   * 計器状態
    */
   conditions?: Condition[]
   /**
@@ -30,7 +30,7 @@ export type UseSearchProps = {
 
 export type UseSearch = {
   /**
-   * 検索にヒットした商品リスト
+   * 検索にヒットした計器リスト
    */
   products: Product[]
   /**
@@ -47,7 +47,7 @@ export type UseSearch = {
  * プロダクトAPI（一覧取得）のカスタムフック
  * @param context APIコンテキスト
  * @param params 検索条件
- * @returns 商品一覧とAPI呼び出しの状態
+ * @returns 計器一覧とAPI呼び出しの状態
  */
 const useSearch = (
   context: ApiContext,

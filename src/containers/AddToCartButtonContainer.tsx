@@ -4,7 +4,7 @@ import type { Product } from 'types'
 
 interface AddToCartButtonContainerProps {
   /**
-   * 追加される商品
+   * 追加される計器
    */
   product: Product
   /**
@@ -25,7 +25,7 @@ const AddToCartButtonContainer = ({
     const productId = Number(product.id)
     const result = cart.findIndex((v) => v.id === productId)
 
-    // 同じ商品がカートに存在しない場合は追加する
+    // 同じ計器がカートに存在しない場合は追加する
     if (result === -1) {
       addProductToCart(product)
     }
@@ -39,7 +39,7 @@ const AddToCartButtonContainer = ({
       height="66px"
       onClick={handleAddToCartButtonClick}
     >
-      カートに追加
+      変更
     </Button>
   )
 }

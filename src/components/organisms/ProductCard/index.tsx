@@ -5,19 +5,19 @@ import Box from 'components/layout/Box'
 
 interface ProductCardProps {
   /**
-   * 商品タイトル
+   * 計器タイトル
    */
   title: string
   /**
-   * 商品価格
+   * 計器価格
    */
   price: number
   /**
-   * 商品画像URL
+   * 計器画像URL
    */
   imageUrl: string
   /**
-   * 商品のぼかし画像のデータURIスキーム
+   * 計器のぼかし画像のデータURIスキーム
    */
   blurDataUrl?: string
   /**
@@ -26,17 +26,17 @@ interface ProductCardProps {
   variant?: 'listing' | 'small' | 'detail'
 }
 
-// 商品カードのコンテナ
+// 計器カードのコンテナ
 const ProductCardContainer = styled.div`
   position: relative;
 `
 
-// 商品カード画像のコンテナ
+// 計器カード画像のコンテナ
 const ProductCardImageContainer = styled.div`
   z-index: 99;
 `
 
-// 商品カードの情報
+// 計器カードの情報
 const ProductCardInfo = styled.div`
   position: absolute;
   z-index: 100;
@@ -45,7 +45,7 @@ const ProductCardInfo = styled.div`
 `
 
 /**
- * 商品カード
+ * 計器カード
  */
 const ProductCard = ({
   title,

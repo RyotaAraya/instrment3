@@ -6,28 +6,28 @@ export default {
   argTypes: {
     id: {
       control: { type: 'number' },
-      description: '商品ID',
+      description: '計器ID',
       table: {
         type: { summary: 'number' },
       },
     },
     title: {
       control: { type: 'text' },
-      description: '商品タイトル',
+      description: '計器タイトル',
       table: {
         type: { summary: 'string' },
       },
     },
     imageUrl: {
       control: { type: 'text' },
-      description: '商品画像URL',
+      description: '計器画像URL',
       table: {
         type: { summary: 'string' },
       },
     },
     price: {
       control: { type: 'number' },
-      description: '商品価格',
+      description: '計器価格',
       table: {
         type: { summary: 'number' },
       },

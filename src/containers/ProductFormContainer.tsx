@@ -16,12 +16,12 @@ interface ProductFormContainerProps {
 }
 
 /**
- * 不具合通知登録フォームコンテナ
+ * 不具合通知不具合計器登録フォームコンテナ
  */
 const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
   const { authUser } = useAuthContext()
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
-  //登録ボタンを押した時
+  //不具合計器登録ボタンを押した時
   const handleSave = async (data: ProductFormData) => {
     if (!authUser) return
 
@@ -39,7 +39,7 @@ const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
 
     try {
       setGlobalSpinner(true)
-      // プロダクトAPIで商品を追加する
+      // プロダクトAPIで計器を追加する
       const ret = await addProduct(context, { product })
       onSave && onSave(undefined, ret)
     } catch (err: unknown) {

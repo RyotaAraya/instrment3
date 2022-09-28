@@ -64,8 +64,8 @@ const UserPage: NextPage<UserPageProps> = ({
               <Separator />
             </Box>
             {/*
-              ユーザー商品カードリストコンテナ
-              ユーザーが所持する商品カードリストを表示する。useSearchで常に最新のデータを取得する。
+              ユーザー計器カードリストコンテナ
+              ユーザーが所持する計器カードリストを表示する。useSearchで常に最新のデータを取得する。
             */}
             <UserProductCardListContainer userId={id} products={products} />
           </Box>
@@ -94,7 +94,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     throw new Error('params is undefined')
   }
 
-  // ユーザー情報と ユーザーの所持する商品を取得し、静的ページを作成
+  // ユーザー情報と ユーザーの所持する計器を取得し、静的ページを作成
   // 10秒でrevalidateな状態にし、静的ページを更新する
   const userId = Number(params.id)
   const [user, products] = await Promise.all([

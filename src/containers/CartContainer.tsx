@@ -14,17 +14,17 @@ const context: ApiContext = {
 const CartContainer = () => {
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
   const { cart, removeProductFromCart } = useShoppingCartContext()
-  // 削除ボタンを押した時、商品を削除
+  // 削除ボタンを押した時、計器を削除
   const handleRemoveButtonClick = (id: number) => {
     removeProductFromCart(id)
   }
-  // 購入ボタンを押した時、商品を購入
+  // 購入ボタンを押した時、計器を購入
   const handleBuyButtonClick = async (id: number) => {
     try {
       setGlobalSpinner(true)
       await purchase(context, { productId: id })
       window.alert('購入しました')
-      // 商品購入後はカートから商品を削除する
+      // 計器購入後はカートから計器を削除する
       removeProductFromCart(id)
     } catch (err: unknown) {
       if (err instanceof Error) {

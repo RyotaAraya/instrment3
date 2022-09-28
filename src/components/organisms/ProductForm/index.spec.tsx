@@ -32,7 +32,7 @@ describe('ProductForm', () => {
   it('フォーム入力後、onProductSaveが呼ばれる', async () => {
     // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
     await act(async () => {
-      // 商品画像を入力
+      // 計器画像を入力
       const element = await screen.findByTestId('dropzone')
       fireEvent.drop(element, {
         dataTransfer: {
@@ -42,15 +42,15 @@ describe('ProductForm', () => {
         },
       })
 
-      // 商品のタイトルを入力
+      // 不具合計器名を入力
       const inputUsernameNode = screen.getByPlaceholderText(
-        /商品のタイトル/,
+        /不具合計器名/,
       ) as HTMLInputElement
-      fireEvent.change(inputUsernameNode, { target: { value: '商品' } })
+      fireEvent.change(inputUsernameNode, { target: { value: '計器' } })
 
-      // 商品情報を入力
+      // 計器情報を入力
       const inputPasswordNode = screen.getByPlaceholderText(
-        /最高の商品です/,
+        /指示値振れが頻発 ±10%/,
       ) as HTMLInputElement
       fireEvent.change(inputPasswordNode, { target: { value: 'テストテスト' } })
 
@@ -60,25 +60,25 @@ describe('ProductForm', () => {
       ) as HTMLInputElement
       fireEvent.change(inputPriceNode, { target: { value: '100' } })
 
-      // 登録ボタンをクリック
-      fireEvent.click(screen.getByText('登録'))
+      // 不具合計器登録ボタンをクリック
+      fireEvent.click(screen.getByText('不具合計器登録'))
     })
 
     // handleProductSaveが呼ばれていることを確認
     expect(handleProductSave).toHaveBeenCalledTimes(1)
   })
 
-  it('商品タイトル入力だけでは、バリデーションエラーでonProductSaveが呼ばれない', async () => {
+  it('不具合計器名入力だけでは、バリデーションエラーでonProductSaveが呼ばれない', async () => {
     // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
     await act(async () => {
-      // 商品のタイトルを入力
+      // 不具合計器名を入力
       const inputUsernameNode = screen.getByPlaceholderText(
-        /商品のタイトル/,
+        /不具合計器名/,
       ) as HTMLInputElement
-      fireEvent.change(inputUsernameNode, { target: { value: '商品' } })
+      fireEvent.change(inputUsernameNode, { target: { value: '計器' } })
 
-      // 登録ボタンをクリック
-      fireEvent.click(screen.getByText('登録'))
+      // 不具合計器登録ボタンをクリック
+      fireEvent.click(screen.getByText('不具合計器登録'))
     })
 
     // handleProductSaveが呼ばれていないことを確認

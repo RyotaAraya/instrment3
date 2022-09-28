@@ -14,8 +14,8 @@ type ShopReducerAction =
     }
 
 /**
- * 商品追加アクション
- * @param product 商品
+ * 計器追加アクション
+ * @param product 計器
  * @param state 現在の状態
  * @returns 次の状態
  */
@@ -24,8 +24,8 @@ const addProductToCart = (product: Product, state: Product[]) => {
 }
 
 /**
- * 商品削除アクション
- * @param product 商品
+ * 計器削除アクション
+ * @param product 計器
  * @param state 現在の状態
  * @returns 次の状態
  */
