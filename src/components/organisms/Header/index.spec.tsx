@@ -24,7 +24,7 @@ const authUser: User = {
   description: '',
 }
 
-// ダミー商品
+// ダミー計器
 const product: Product = {
   id: 1,
   category: 'flowmeter',
@@ -42,7 +42,7 @@ describe('Header', () => {
   const useShoppingCartContextMock =
     useShoppingCartContext as jest.MockedFunction<typeof useShoppingCartContext>
 
-  it('カートに商品が存在する', async () => {
+  it('カートに計器が存在する', async () => {
     useShoppingCartContextMock.mockReturnValue({
       cart: [product],
       // eslint-disable-next-line @typescript-eslint/no-empty-function

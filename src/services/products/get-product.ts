@@ -3,7 +3,7 @@ import { fetcher } from 'utils'
 
 export type GetProductParams = {
   /**
-   * 取得する商品
+   * 取得する計器
    */
   id: number
 }
@@ -11,8 +11,8 @@ export type GetProductParams = {
 /**
  * プロダクトAPI（個別取得）
  * @param context APIコンテキスト
- * @param params 商品ID
- * @returns 商品
+ * @param params 計器ID
+ * @returns 計器
  */
 const getProduct = async (
   context: ApiContext,

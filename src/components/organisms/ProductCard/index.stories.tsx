@@ -6,28 +6,28 @@ export default {
   argTypes: {
     title: {
       control: { type: 'text' },
-      description: '商品名',
+      description: '計器名',
       table: {
         type: { summary: 'string' },
       },
     },
     price: {
       control: { type: 'number' },
-      description: '商品価格',
+      description: '計器価格',
       table: {
         type: { summary: 'number' },
       },
     },
     imageUrl: {
       control: { type: 'text' },
-      description: '商品画像URL',
+      description: '計器画像URL',
       table: {
         type: { summary: 'string' },
       },
     },
     blurDataUrl: {
       control: { type: 'text' },
-      description: '商品のぼかし画像のデータURIスキーム',
+      description: '計器のぼかし画像のデータURIスキーム',
       table: {
         type: { summary: 'string' },
       },

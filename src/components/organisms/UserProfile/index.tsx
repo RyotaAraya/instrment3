@@ -17,7 +17,7 @@ interface UserProfileProps {
    */
   profileImageUrl: string
   /**
-   * ユーザーが所有する商品数
+   * ユーザーが所有する計器数
    */
   numberOfProducts: number
   /**

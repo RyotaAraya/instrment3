@@ -48,7 +48,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             不具合計器の写真
           </Text>
         </Box>
-        {/* 商品画像の入力 */}
+        {/* 計器画像の入力 */}
         <Controller
           control={control}
           name="image"
@@ -136,7 +136,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           <Text as="label" variant="medium">
             計器名
           </Text>
-          {/* 商品タイトルの入力 */}
+          {/* 計器タイトルの入力 */}
           <Input
             {...register('title', { required: true })}
             name="title"
@@ -154,7 +154,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           <Text as="label" variant="medium">
             概要
           </Text>
-          {/* 商品概要の入力 */}
+          {/* 計器概要の入力 */}
           <Controller
             control={control}
             name="description"

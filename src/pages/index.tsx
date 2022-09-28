@@ -17,7 +17,7 @@ const HomePage: NextPage<HomePageProps> = ({
   thermometerProducts,
   flameDetectorProducts,
 }: HomePageProps) => {
-  // 商品カードカルーセルをレンダリング
+  // 計器カードカルーセルをレンダリング
   const renderProductCardCarousel = (products: Product[]) => {
     return (
       <ProductCardCarousel>
@@ -120,7 +120,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const context: ApiContext = {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }
-  // 各商品のトップ6個を取得し、静的ページを作成
+  // 各計器のトップ6個を取得し、静的ページを作成
   // 60秒でrevalidateな状態にし、静的ページを更新する
   const [
     flowmeterProducts,

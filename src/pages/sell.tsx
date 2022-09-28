@@ -48,8 +48,8 @@ const SellPage: NextPage = () => {
           </Box>
           <Box width="100%">
             {/*
-              商品投稿フォームコンテナ
-              商品情報を入力し、プロダクトAPIを通じて商品を保存
+              計器投稿フォームコンテナ
+              計器情報を入力し、プロダクトAPIを通じて計器を保存
             */}
             <ProductFormContainer onSave={handleSave} />
           </Box>

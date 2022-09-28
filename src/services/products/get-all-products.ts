@@ -3,11 +3,11 @@ import { fetcher } from 'utils'
 
 export type GetAllProductsParams = {
   /**
-   * 商品カテゴリ
+   * 計器カテゴリ
    */
   category?: Category
   /**
-   * 商品状態
+   * 計器状態
    */
   conditions?: Condition[]
   /**
@@ -36,7 +36,7 @@ export type GetAllProductsParams = {
  * プロダクトAPI（一覧取得）
  * @param context APIコンテキスト
  * @param params 検索条件
- * @returns 商品一覧
+ * @returns 計器一覧
  */
 // eslint-disable-next-line complexity
 const getAllProducts = async (

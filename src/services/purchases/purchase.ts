@@ -3,15 +3,15 @@ import { fetcher } from 'utils'
 
 export type PurchaseParams = {
   /**
-   * 購入する商品ID
+   * 購入する計器ID
    */
   productId: number
 }
 
 /**
- * 購入API（商品購入）
+ * 購入API（計器購入）
  * @param context APIコンテキスト
- * @param params 商品ID
+ * @param params 計器ID
  * @returns 購入結果のメッセージ
  */
 const purchase = async (

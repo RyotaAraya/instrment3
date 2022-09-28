@@ -37,7 +37,7 @@ export const ShoppingCartContextProvider = ({
     dispatch({ type: ADD_PRODUCT, payload: product })
   }
 
-  // 商品をカートから削除
+  // 計器をカートから削除
   const removeProductFromCart = (productId: number) => {
     dispatch({ type: REMOVE_PRODUCT, payload: productId })
   }

@@ -29,11 +29,11 @@ const categoryNameDict: Record<Category, string> = {
 
 const SearchPage: NextPage = () => {
   const router = useRouter()
-  // 商品のカテゴリーをクエリから取得
+  // 計器のカテゴリーをクエリから取得
   const slug: Category[] = Array.isArray(router.query.slug)
     ? (router.query.slug as Category[])
     : []
-  // 商品の状態をクエリから取得
+  // 計器の状態をクエリから取得
   const conditions = (() => {
     if (Array.isArray(router.query.condition)) {
       return router.query.condition as Condition[]
@@ -99,9 +99,9 @@ const SearchPage: NextPage = () => {
         <Flex>
           <Flex flexDirection={{ base: 'column', md: 'row' }}>
             <Box as="aside" minWidth="200px" marginBottom={{ base: 2, md: 0 }}>
-              {/* 商品の状態のフィルタ */}
+              {/* 計器の状態のフィルタ */}
               <FilterGroup
-                title="商品の状態"
+                title="計器の状態"
                 items={PLANTS2}
                 value={conditions}
                 onChange={handleChange}
@@ -136,11 +136,11 @@ const SearchPage: NextPage = () => {
                 fontWeight="bold"
                 variant="mediumLarge"
               >
-                商品一覧
+                計器一覧
               </Text>
               {/*
-                商品カードリストコンテナ
-                検索クエリから商品カードリストを表示
+                計器カードリストコンテナ
+                検索クエリから計器カードリストを表示
                */}
               <ProductCardListContainer
                 category={slug.length > 0 ? slug[slug.length - 1] : undefined}

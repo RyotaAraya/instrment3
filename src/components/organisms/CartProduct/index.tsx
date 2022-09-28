@@ -16,23 +16,23 @@ const RemoveText = styled(Text)`
 
 interface CartProductProps {
   /**
-   * 商品ID
+   * 計器ID
    */
   id: number
   /**
-   * 商品画像URL
+   * 計器画像URL
    */
   imageUrl: string
   /**
-   * 商品タイトル
+   * 計器タイトル
    */
   title: string
   /**
-   * 商品価格
+   * 計器価格
    */
   price: number
   /**
-   * 購入ボタンを押した時のイベントハンドラ
+   * 不具合計器登録ボタンを押した時のイベントハンドラ
    */
   onBuyButtonClick?: (id: number) => void
   /**
@@ -42,7 +42,7 @@ interface CartProductProps {
 }
 
 /**
- * カート商品
+ * カート計器
  */
 const CartProduct = ({
   id,

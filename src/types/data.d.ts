@@ -4,7 +4,7 @@ export type Category =
   | 'pressureGauge'
   | 'thermometer'
   | 'flameDetector'
-// 商品の状態
+// プラント
 export type Condition = 'new' | 'used'
 
 // ユーザー
@@ -17,7 +17,7 @@ export type User = {
   description: string
 }
 
-// 商品
+// 計器
 export type Product = {
   id: number
   category: Category

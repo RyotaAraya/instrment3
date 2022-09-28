@@ -30,7 +30,7 @@ export default {
     },
     numberOfProducts: {
       control: { type: 'number' },
-      description: 'ユーザーが所有する商品数',
+      description: 'ユーザーが所有する計器数',
       table: {
         type: { summary: 'number' },
       },

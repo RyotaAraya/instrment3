@@ -3,7 +3,7 @@ import type { ApiContext, Product } from 'types'
 
 export type UseProductProps = {
   /**
-   * 取得する商品ID
+   * 取得する計器ID
    */
   id: number
   /**
@@ -14,7 +14,7 @@ export type UseProductProps = {
 
 export type UseProduct = {
   /**
-   * 取得する商品
+   * 取得する計器
    */
   product?: Product
   /**
@@ -30,8 +30,8 @@ export type UseProduct = {
 /**
  * プロダクトAPI（個別取得）のカスタムフック
  * @param context APIコンテキスト
- * @param params 商品IDと初期状態
- * @returns 商品とAPI呼び出しの状態
+ * @param params 計器IDと初期状態
+ * @returns 計器とAPI呼び出しの状態
  */
 const useProduct = (
   context: ApiContext,

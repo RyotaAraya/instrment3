@@ -39,7 +39,7 @@ const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
 
     try {
       setGlobalSpinner(true)
-      // プロダクトAPIで商品を追加する
+      // プロダクトAPIで計器を追加する
       const ret = await addProduct(context, { product })
       onSave && onSave(undefined, ret)
     } catch (err: unknown) {
