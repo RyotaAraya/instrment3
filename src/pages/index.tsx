@@ -12,9 +12,10 @@ import { ApiContext, Product } from 'types'
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const HomePage: NextPage<HomePageProps> = ({
-  bookProducts,
-  clothesProducts,
-  shoesProducts,
+  flowmeterProducts,
+  pressureGaugeProducts,
+  thermometerProducts,
+  flameDetectorProducts,
 }: HomePageProps) => {
   // 商品カードカルーセルをレンダリング
   const renderProductCardCarousel = (products: Product[]) => {
@@ -50,31 +51,31 @@ const HomePage: NextPage<HomePageProps> = ({
         >
           <Box width="100%">
             <Text as="h1" marginBottom={0} color="white" variant="extraLarge">
-              Gihyo C2Cで
+              INSTRMENT3
             </Text>
             <Text as="h1" marginTop={0} color="white" variant="extraLarge">
-              お気に入りのアイテムを見つけよう
+              工事管理ツール
             </Text>
           </Box>
           <Box width="100%">
             <Text as="p" color="white" variant="mediumLarge">
-              Gihyo
-              C2Cは実践的なNext.jsアプリケーション開発で使われるデモアプリです。モックサーバを使用しています。
+              Next.jsのデモアプリです。
+            </Text>
+            <Text as="p" color="white" variant="mediumLarge">
               ソースコードは
               <Text
                 as="a"
                 style={{ textDecoration: 'underline' }}
                 target="_blank"
-                href="https://github.com/gihyo-book/ts-nextbook-app"
+                href="https://github.com/RyotaAraya/instrment3"
                 variant="mediumLarge"
                 color="white"
               >
-                こちら
+                コチラ
               </Text>
-              のGithubからダウンロードできます。
             </Text>
             <Text as="p" color="white" variant="mediumLarge">
-              このアプリはTypeScript/Next.jsで作成されており、バックエンドのモックAPIはjson-serverが使用されています。
+              TypeScript/Next.jsで作成されており、バックエンドのモックAPIはjson-serverを使用しています。
             </Text>
           </Box>
         </Flex>
@@ -87,21 +88,27 @@ const HomePage: NextPage<HomePageProps> = ({
         >
           <Box marginBottom={3}>
             <Text as="h2" variant="large">
-              トップス
+              流量計
             </Text>
-            {renderProductCardCarousel(clothesProducts)}
+            {renderProductCardCarousel(flowmeterProducts)}
           </Box>
           <Box marginBottom={3}>
             <Text as="h2" variant="large">
-              本
+              圧力計
             </Text>
-            {renderProductCardCarousel(bookProducts)}
+            {renderProductCardCarousel(pressureGaugeProducts)}
           </Box>
           <Box>
             <Text as="h2" variant="large">
-              シューズ
+              温度計
             </Text>
-            {renderProductCardCarousel(shoesProducts)}
+            {renderProductCardCarousel(thermometerProducts)}
+          </Box>
+          <Box>
+            <Text as="h2" variant="large">
+              火炎検知器
+            </Text>
+            {renderProductCardCarousel(flameDetectorProducts)}
           </Box>
         </Box>
       </Flex>
@@ -115,17 +122,24 @@ export const getStaticProps: GetStaticProps = async () => {
   }
   // 各商品のトップ6個を取得し、静的ページを作成
   // 60秒でrevalidateな状態にし、静的ページを更新する
-  const [clothesProducts, bookProducts, shoesProducts] = await Promise.all([
-    getAllProducts(context, { category: 'clothes', limit: 6, page: 1 }),
-    getAllProducts(context, { category: 'book', limit: 6, page: 1 }),
-    getAllProducts(context, { category: 'shoes', limit: 6, page: 1 }),
+  const [
+    flowmeterProducts,
+    pressureGaugeProducts,
+    thermometerProducts,
+    flameDetectorProducts,
+  ] = await Promise.all([
+    getAllProducts(context, { category: 'flowmeter', limit: 6, page: 1 }),
+    getAllProducts(context, { category: 'pressureGauge', limit: 6, page: 1 }),
+    getAllProducts(context, { category: 'thermometer', limit: 6, page: 1 }),
+    getAllProducts(context, { category: 'flameDetector', limit: 6, page: 1 }),
   ])
 
   return {
     props: {
-      clothesProducts,
-      bookProducts,
-      shoesProducts,
+      flowmeterProducts,
+      pressureGaugeProducts,
+      thermometerProducts,
+      flameDetectorProducts,
     },
     revalidate: 60,
   }

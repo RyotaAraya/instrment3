@@ -27,7 +27,7 @@ export const Login = () => {
     useEffect(() => {
       addProductToCart({
         id: 1,
-        category: 'book',
+        category: 'flowmeter',
         title: 'Product',
         description: '',
         imageUrl: '/images/sample/1.jpg',

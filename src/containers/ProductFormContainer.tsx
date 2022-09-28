@@ -10,18 +10,18 @@ const context: ApiContext = {
 
 interface ProductFormContainerProps {
   /**
-   * 商品が保存された時のイベントハンドラ
+   * 不具合計器が保存された時のイベントハンドラ
    */
   onSave?: (error?: Error, product?: Product) => void
 }
 
 /**
- * 商品投稿フォームコンテナ
+ * 不具合通知登録フォームコンテナ
  */
 const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
   const { authUser } = useAuthContext()
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
-  // 出品ボタンを押した時
+  //登録ボタンを押した時
   const handleSave = async (data: ProductFormData) => {
     if (!authUser) return
 

@@ -8,6 +8,7 @@ import {
 import { ThemeProvider } from 'styled-components'
 import Dropdown from '.'
 import { theme } from 'themes'
+import { PLANTS } from 'utils/consts'
 
 describe('Dropdown', () => {
   let renderResult: RenderResult
@@ -18,13 +19,7 @@ describe('Dropdown', () => {
     handleChange = jest.fn()
     renderResult = render(
       <ThemeProvider theme={theme}>
-        <Dropdown
-          options={[
-            { value: 'used', label: '中古' },
-            { value: 'new', label: '新品' },
-          ]}
-          onChange={handleChange}
-        />
+        <Dropdown options={PLANTS} onChange={handleChange} />
       </ThemeProvider>,
     )
   })

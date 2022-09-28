@@ -11,6 +11,7 @@ import FilterGroup from 'components/molecules/FilterGroup'
 import Layout from 'components/templates/Layout'
 import ProductCardListContainer from 'containers/ProductCardListContainer'
 import type { Category, Condition } from 'types'
+import { PLANTS2 } from 'utils/consts'
 
 const Anchor = styled(Text)`
   cursor: pointer;
@@ -20,9 +21,10 @@ const Anchor = styled(Text)`
 `
 
 const categoryNameDict: Record<Category, string> = {
-  book: '本',
-  shoes: 'シューズ',
-  clothes: 'トップス',
+  flowmeter: '流量計',
+  pressureGauge: '圧力計',
+  thermometer: '温度計',
+  flameDetector: '火炎検知器',
 }
 
 const SearchPage: NextPage = () => {
@@ -100,10 +102,7 @@ const SearchPage: NextPage = () => {
               {/* 商品の状態のフィルタ */}
               <FilterGroup
                 title="商品の状態"
-                items={[
-                  { label: '新品', name: 'new' },
-                  { label: '中古', name: 'used' },
-                ]}
+                items={PLANTS2}
                 value={conditions}
                 onChange={handleChange}
               />

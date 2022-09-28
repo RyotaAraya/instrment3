@@ -7,6 +7,7 @@ import Box from 'components/layout/Box'
 import Dropdown from 'components/molecules/Dropdown'
 import InputImages, { FileData } from 'components/molecules/InputImages'
 import type { Category, Condition } from 'types'
+import { PLANTS } from 'utils/consts'
 
 export type ProductFormData = {
   image: FileData[]
@@ -19,13 +20,13 @@ export type ProductFormData = {
 
 interface ProductFormProps {
   /**
-   * 出品ボタンを押した時のイベントハンドラ
+   * 登録ボタンを押した時のイベントハンドラ
    */
   onProductSave?: (data: ProductFormData) => void
 }
 
 /**
- * 商品投稿フォーム
+ * 不具合通知フォーム
  */
 const ProductForm = ({ onProductSave }: ProductFormProps) => {
   // React Hook Formの使用
@@ -44,7 +45,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
       <Box marginBottom={3}>
         <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
-            商品の写真
+            不具合計器の写真
           </Text>
         </Box>
         {/* 商品画像の入力 */}
@@ -71,7 +72,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
       <Box marginBottom={3}>
         <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
-            商品情報
+            計器情報
           </Text>
         </Box>
         <Box marginBottom={1}>
@@ -126,13 +127,14 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             control={control}
             name="category"
             rules={{ required: true }}
-            defaultValue="shoes"
+            defaultValue="flowmeter"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <Dropdown
                 options={[
-                  { value: 'shoes', label: 'シューズ' },
-                  { value: 'clothes', label: 'トップス' },
-                  { value: 'book', label: '本' },
+                  { value: 'flowmeter', label: '流量計' },
+                  { value: 'pressureGauge', label: '圧力計' },
+                  { value: 'thermometer', label: '温度計' },
+                  { value: 'flameDetector', label: '火炎検知器' },
                 ]}
                 hasError={!!error}
                 value={value}
@@ -149,9 +151,9 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            商品の状態
+            プラント名
           </Text>
-          {/* 商品の状態のドロップダウン */}
+          {/* プラント名のドロップダウン */}
           <Controller
             control={control}
             name="condition"
@@ -159,20 +161,17 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             defaultValue="used"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <Dropdown
-                options={[
-                  { value: 'used', label: '中古' },
-                  { value: 'new', label: '新品' },
-                ]}
+                options={PLANTS}
                 hasError={!!error}
                 value={value ?? 'used'}
-                placeholder="Please select condition"
+                placeholder="プラント名を選択してください"
                 onChange={(v) => onChange(v?.value)}
               />
             )}
           />
           {errors.condition && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              商品の状態の入力は必須です
+              プラント名の入力は必須です
             </Text>
           )}
         </Box>
@@ -196,7 +195,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
       </Box>
       <Button width="100%" type="submit">
-        出品
+        登録
       </Button>
     </form>
   )
