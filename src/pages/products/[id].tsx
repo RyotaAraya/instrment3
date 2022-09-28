@@ -94,7 +94,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
           <Separator />
           <Box paddingTop={1}>
             <Text as="h2" variant="large" marginTop={0}>
-              登録者
+              不具合計器登録者
             </Text>
             <Link href={`/users/${product.owner.id}`}>
               <a>

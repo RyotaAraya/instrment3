@@ -68,9 +68,9 @@ const UserProfile = ({
             >
               {username}
             </Text>
-            {/* 不具合通知登録数 */}
+            {/* 不具合通知不具合計器登録数 */}
             <Text marginBottom={1} marginTop={0} as="p">
-              {numberOfProducts}登録済
+              {numberOfProducts}不具合計器登録済
             </Text>
             {/* ユーザー概要 */}
             {variant === 'normal' && (

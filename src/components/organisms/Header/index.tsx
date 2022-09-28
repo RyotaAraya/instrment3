@@ -142,7 +142,7 @@ const Header = () => {
           </NavLink>
           <NavLink>
             <Link href="/sell" passHref>
-              <Button as="a">登録</Button>
+              <Button as="a">不具合計器登録</Button>
             </Link>
           </NavLink>
         </Nav>

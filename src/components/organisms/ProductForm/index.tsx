@@ -20,7 +20,7 @@ export type ProductFormData = {
 
 interface ProductFormProps {
   /**
-   * 登録ボタンを押した時のイベントハンドラ
+   * 不具合計器登録ボタンを押した時のイベントハンドラ
    */
   onProductSave?: (data: ProductFormData) => void
 }
@@ -64,7 +64,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         />
         {errors.image && (
           <Text color="danger" variant="small" paddingLeft={1}>
-            Product image is required
+            不具合計器の写真は必須です
           </Text>
         )}
       </Box>
@@ -77,44 +77,27 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            タイトル
+            プラント名
           </Text>
-          {/* 商品タイトルの入力 */}
-          <Input
-            {...register('title', { required: true })}
-            name="title"
-            type="text"
-            placeholder="商品のタイトル"
-            hasError={!!errors.title}
-          />
-          {errors.title && (
-            <Text color="danger" variant="small" paddingLeft={1}>
-              タイトルの入力は必須です
-            </Text>
-          )}
-        </Box>
-        <Box marginBottom={1}>
-          <Text as="label" variant="medium">
-            概要
-          </Text>
-          {/* 商品概要の入力 */}
+          {/* プラント名のドロップダウン */}
           <Controller
             control={control}
-            name="description"
+            name="condition"
             rules={{ required: true }}
+            defaultValue="used"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <TextArea
-                placeholder="最高の商品です！"
+              <Dropdown
+                options={PLANTS}
                 hasError={!!error}
-                onChange={onChange}
-              >
-                {value}
-              </TextArea>
+                value={value ?? 'used'}
+                placeholder="プラント名を選択してください"
+                onChange={(v) => onChange(v?.value)}
+              />
             )}
           />
-          {errors.description && (
+          {errors.condition && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              概要の入力は必須です
+              プラント名の入力は必須です
             </Text>
           )}
         </Box>
@@ -151,27 +134,44 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            プラント名
+            計器名
           </Text>
-          {/* プラント名のドロップダウン */}
+          {/* 商品タイトルの入力 */}
+          <Input
+            {...register('title', { required: true })}
+            name="title"
+            type="text"
+            placeholder="流量計1"
+            hasError={!!errors.title}
+          />
+          {errors.title && (
+            <Text color="danger" variant="small" paddingLeft={1}>
+              計器名の入力は必須です
+            </Text>
+          )}
+        </Box>
+        <Box marginBottom={1}>
+          <Text as="label" variant="medium">
+            概要
+          </Text>
+          {/* 商品概要の入力 */}
           <Controller
             control={control}
-            name="condition"
+            name="description"
             rules={{ required: true }}
-            defaultValue="used"
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <Dropdown
-                options={PLANTS}
+              <TextArea
+                placeholder="指示値振れ頻発 ±10%"
                 hasError={!!error}
-                value={value ?? 'used'}
-                placeholder="プラント名を選択してください"
-                onChange={(v) => onChange(v?.value)}
-              />
+                onChange={onChange}
+              >
+                {value}
+              </TextArea>
             )}
           />
-          {errors.condition && (
+          {errors.description && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              プラント名の入力は必須です
+              概要の入力は必須です
             </Text>
           )}
         </Box>
@@ -195,7 +195,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
       </Box>
       <Button width="100%" type="submit">
-        登録
+        不具合計器登録
       </Button>
     </form>
   )
