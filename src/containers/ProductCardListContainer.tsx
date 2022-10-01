@@ -4,7 +4,7 @@ import Box from 'components/layout/Box'
 import ProductCard from 'components/organisms/ProductCard'
 import ProductCardList from 'components/organisms/ProductCardList'
 import useSearch from 'services/products/use-search'
-import type { ApiContext, Category, Condition } from 'types'
+import type { ApiContext, Category, Progress } from 'types'
 
 const context: ApiContext = {
   apiRootUrl: process.env.NEXT_PUBLIC_API_BASE_PATH || '/api/proxy',
@@ -18,7 +18,7 @@ interface ProductCardListContainerProps {
   /**
    * 検索クエリ - 計器の状態
    */
-  conditions?: Condition[]
+  progresses?: Progress[]
 }
 
 /**
@@ -26,11 +26,11 @@ interface ProductCardListContainerProps {
  */
 const ProductCardListContainer = ({
   category,
-  conditions,
+  progresses,
 }: ProductCardListContainerProps) => {
   const { products, isLoading } = useSearch(context, {
     category,
-    conditions,
+    progresses,
   })
 
   return (

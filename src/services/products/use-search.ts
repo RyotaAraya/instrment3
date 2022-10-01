@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import type { ApiContext, Category, Condition, Product } from 'types'
+import type { ApiContext, Category, Progress, Product } from 'types'
 
 export type UseSearchProps = {
   /**
@@ -9,7 +9,7 @@ export type UseSearchProps = {
   /**
    * 計器状態
    */
-  conditions?: Condition[]
+  progresses?: Progress[]
   /**
    * 所有するユーザーID
    */
@@ -54,7 +54,7 @@ const useSearch = (
   {
     category,
     userId,
-    conditions,
+    progresses,
     initial,
     sort = 'id',
     order = 'desc',
@@ -65,8 +65,8 @@ const useSearch = (
 
   category && params.append('category', category)
   userId && params.append('owner.id', `${userId}`)
-  conditions &&
-    conditions.forEach((condition) => params.append('condition', condition))
+  progresses &&
+    progresses.forEach((progress) => params.append('progress', progress))
   sort && params.append('_sort', sort)
   order && params.append('_order', order)
   const query = params.toString()

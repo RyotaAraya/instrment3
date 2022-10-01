@@ -1,4 +1,4 @@
-import type { ApiContext, Category, Condition, Product } from 'types'
+import type { ApiContext, Category, Progress, Product } from 'types'
 import { fetcher } from 'utils'
 
 export type GetAllProductsParams = {
@@ -9,7 +9,7 @@ export type GetAllProductsParams = {
   /**
    * 計器状態
    */
-  conditions?: Condition[]
+  progresses?: Progress[]
   /**
    * 所有するユーザーID
    */
@@ -43,7 +43,7 @@ const getAllProducts = async (
   context: ApiContext,
   {
     category,
-    conditions,
+    progresses,
     userId,
     page,
     limit,
@@ -55,8 +55,8 @@ const getAllProducts = async (
   const params = new URLSearchParams()
 
   category && params.append('category', category)
-  conditions &&
-    conditions.forEach((condition) => params.append('condition', condition))
+  progresses &&
+    progresses.forEach((progress) => params.append('progress', progress))
   userId && params.append('owner.id', `${userId}`)
   page && params.append('_page', `${page}`)
   limit && params.append('_limit', `${limit}`)

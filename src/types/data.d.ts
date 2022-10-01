@@ -4,8 +4,9 @@ export type Category =
   | 'pressureGauge'
   | 'thermometer'
   | 'flameDetector'
-// プラント
-export type Condition = 'new' | 'used'
+
+// 進捗
+export type Progress = 'notStarted' | 'doing' | 'postponed' | 'done'
 
 // ユーザー
 export type User = {
@@ -26,11 +27,17 @@ export type Product = {
   imageUrl: string
   blurDataUrl: string
   price: number
-  condition: Condition
+  progress: Progress
   owner: User
 }
 
 // APIコンテキスト
 export type ApiContext = {
   apiRootUrl: string
+}
+
+// 進捗
+export type Filter = {
+  label: string
+  name: string
 }

@@ -30,7 +30,7 @@ const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
       title: data.title,
       description: data.description,
       category: data.category,
-      condition: data.condition,
+      progress: data.progress,
       price: Number(data.price),
       imageUrl: '/products/shoes/feet-1840619_1920.jpeg', // ダミー画像
       blurDataUrl: '',
