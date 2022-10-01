@@ -6,15 +6,14 @@ import TextArea from 'components/atoms/TextArea'
 import Box from 'components/layout/Box'
 import Dropdown from 'components/molecules/Dropdown'
 import InputImages, { FileData } from 'components/molecules/InputImages'
-import type { Category, Condition } from 'types'
-import { PLANTS } from 'utils/consts'
+import type { Category, Progress } from 'types'
 
 export type ProductFormData = {
   image: FileData[]
   title: string
   description: string
   category: Category
-  condition: Condition
+  progress: Progress
   price: string
 }
 
@@ -74,32 +73,6 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           <Text as="label" variant="mediumLarge" fontWeight="bold">
             計器情報
           </Text>
-        </Box>
-        <Box marginBottom={1}>
-          <Text as="label" variant="medium">
-            プラント名
-          </Text>
-          {/* プラント名のドロップダウン */}
-          <Controller
-            control={control}
-            name="condition"
-            rules={{ required: true }}
-            defaultValue="used"
-            render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <Dropdown
-                options={PLANTS}
-                hasError={!!error}
-                value={value ?? 'used'}
-                placeholder="プラント名を選択してください"
-                onChange={(v) => onChange(v?.value)}
-              />
-            )}
-          />
-          {errors.condition && (
-            <Text color="danger" variant="small" paddingLeft={1}>
-              プラント名の入力は必須です
-            </Text>
-          )}
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">

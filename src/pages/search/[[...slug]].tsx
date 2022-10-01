@@ -10,8 +10,8 @@ import Breadcrumb from 'components/molecules/Breadcrumb'
 import FilterGroup from 'components/molecules/FilterGroup'
 import Layout from 'components/templates/Layout'
 import ProductCardListContainer from 'containers/ProductCardListContainer'
-import type { Category, Condition } from 'types'
-import { PLANTS2 } from 'utils/consts'
+import type { Category, Progress } from 'types'
+import { PROGRESS } from 'utils/consts'
 
 const Anchor = styled(Text)`
   cursor: pointer;
@@ -33,23 +33,26 @@ const SearchPage: NextPage = () => {
   const slug: Category[] = Array.isArray(router.query.slug)
     ? (router.query.slug as Category[])
     : []
+
+  console.log('slug', slug)
   // 計器の状態をクエリから取得
-  const conditions = (() => {
-    if (Array.isArray(router.query.condition)) {
-      return router.query.condition as Condition[]
-    } else if (router.query.condition) {
-      return [router.query.condition as Condition]
+  const progresses = (() => {
+    if (Array.isArray(router.query.progress)) {
+      return router.query.progress as Progress[]
+    } else if (router.query.progress) {
+      return [router.query.progress as Progress]
     } else {
       return []
     }
   })()
+  console.log('progresses', progresses)
 
   const handleChange = (selected: string[]) => {
     router.push({
       pathname: router.pathname,
       query: {
         slug,
-        condition: selected,
+        progress: selected,
       },
     })
   }
@@ -100,12 +103,14 @@ const SearchPage: NextPage = () => {
           <Flex flexDirection={{ base: 'column', md: 'row' }}>
             <Box as="aside" minWidth="200px" marginBottom={{ base: 2, md: 0 }}>
               {/* 計器の状態のフィルタ */}
-              <FilterGroup
-                title="計器の状態"
-                items={PLANTS2}
-                value={conditions}
-                onChange={handleChange}
-              />
+              <Box paddingTop={1}>
+                <FilterGroup
+                  title="進捗"
+                  items={PROGRESS}
+                  value={progresses}
+                  onChange={handleChange}
+                />
+              </Box>
               <Box paddingTop={1}>
                 <Text as="h2" fontWeight="bold" variant="mediumLarge">
                   カテゴリ
@@ -144,7 +149,7 @@ const SearchPage: NextPage = () => {
                */}
               <ProductCardListContainer
                 category={slug.length > 0 ? slug[slug.length - 1] : undefined}
-                conditions={conditions}
+                progresses={progresses}
               />
             </Box>
           </Flex>

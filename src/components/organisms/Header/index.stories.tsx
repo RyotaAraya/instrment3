@@ -33,7 +33,7 @@ export const Login = () => {
         imageUrl: '/images/sample/1.jpg',
         blurDataUrl: '',
         price: 1000,
-        condition: 'used',
+        progress: 'done',
         owner: authUser,
       })
       // eslint-disable-next-line react-hooks/exhaustive-deps
