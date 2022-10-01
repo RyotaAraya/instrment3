@@ -14,7 +14,6 @@ export type ProductFormData = {
   description: string
   category: Category
   progress: Progress
-  price: string
 }
 
 interface ProductFormProps {
@@ -145,24 +144,6 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           {errors.description && (
             <Text color="danger" variant="small" paddingLeft={1}>
               概要の入力は必須です
-            </Text>
-          )}
-        </Box>
-        <Box>
-          <Text as="label" variant="medium">
-            価格 (円)
-          </Text>
-          {/* 価格の入力 */}
-          <Input
-            {...register('price', { required: true })}
-            name="price"
-            type="number"
-            placeholder="100"
-            hasError={!!errors.price}
-          />
-          {errors.price && (
-            <Text color="danger" variant="small" paddingLeft={1}>
-              価格の入力は必須です
             </Text>
           )}
         </Box>

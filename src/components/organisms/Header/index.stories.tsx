@@ -32,7 +32,6 @@ export const Login = () => {
         description: '',
         imageUrl: '/images/sample/1.jpg',
         blurDataUrl: '',
-        price: 1000,
         progress: 'done',
         owner: authUser,
       })

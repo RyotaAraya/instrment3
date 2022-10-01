@@ -11,13 +11,6 @@ export default {
         type: { summary: 'string' },
       },
     },
-    price: {
-      control: { type: 'number' },
-      description: '計器価格',
-      table: {
-        type: { summary: 'number' },
-      },
-    },
     imageUrl: {
       control: { type: 'text' },
       description: '計器画像URL',
@@ -55,7 +48,6 @@ Listing.args = {
   variant: 'listing',
   title: 'ナイスシューズ',
   imageUrl: '/images/sample/1.jpg',
-  price: 2000,
 }
 
 // Smallカード
@@ -64,7 +56,6 @@ Small.args = {
   variant: 'small',
   title: 'ナイスシューズ',
   imageUrl: '/images/sample/1.jpg',
-  price: 2000,
 }
 
 // Detailカード
@@ -73,5 +64,4 @@ Detail.args = {
   variant: 'detail',
   title: 'ナイスシューズ',
   imageUrl: '/images/sample/1.jpg',
-  price: 2000,
 }

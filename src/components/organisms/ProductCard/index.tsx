@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import ScaleImage from 'components/atoms/ScaleImage'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
+import { Progress } from 'types/data'
+import { PROGRESS_LIST } from 'utils/consts'
 
 interface ProductCardProps {
   /**
@@ -9,9 +11,9 @@ interface ProductCardProps {
    */
   title: string
   /**
-   * 計器価格
+   * 進捗
    */
-  price: number
+  progress: Progress
   /**
    * 計器画像URL
    */
@@ -49,7 +51,7 @@ const ProductCardInfo = styled.div`
  */
 const ProductCard = ({
   title,
-  price,
+  progress,
   imageUrl,
   blurDataUrl,
   variant = 'listing',
@@ -95,7 +97,7 @@ const ProductCard = ({
               margin={0}
               padding={{ base: 1, md: 2 }}
             >
-              {price}円
+              {PROGRESS_LIST[progress]}
             </Text>
           </Box>
         </ProductCardInfo>
@@ -130,7 +132,7 @@ const ProductCard = ({
             {title}
           </Text>
           <Text as="span" variant="medium">
-            {price}円
+            {PROGRESS_LIST[progress]}
           </Text>
         </Box>
       )}

@@ -26,7 +26,6 @@ export type Product = {
   description: string
   imageUrl: string
   blurDataUrl: string
-  price: number
   progress: Progress
   owner: User
 }
