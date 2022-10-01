@@ -25,13 +25,6 @@ export default {
         type: { summary: 'string' },
       },
     },
-    price: {
-      control: { type: 'number' },
-      description: '計器価格',
-      table: {
-        type: { summary: 'number' },
-      },
-    },
     onBuyButtonClick: {
       description: '購入ボタンを押した時のイベントハンドラ',
       table: {
@@ -56,5 +49,4 @@ NiceShoes.args = {
   id: 1,
   imageUrl: '/images/sample/1.jpg',
   title: 'ナイスシューズ',
-  price: 3200,
 }

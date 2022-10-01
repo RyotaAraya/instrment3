@@ -43,7 +43,7 @@ const UserProductCardListContainer = ({
               <ProductCard
                 variant="small"
                 title={p.title}
-                price={p.price}
+                progress={p.progress}
                 imageUrl={p.imageUrl}
               />
             </a>

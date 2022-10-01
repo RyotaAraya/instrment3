@@ -5,6 +5,7 @@ import Button from 'components/atoms/Button'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
+import { Progress } from 'types/data'
 
 // 削除ボタンのテキスト
 const RemoveText = styled(Text)`
@@ -28,9 +29,9 @@ interface CartProductProps {
    */
   title: string
   /**
-   * 計器価格
+   * 計器タイトル
    */
-  price: number
+  progress: Progress
   /**
    * 不具合計器登録ボタンを押した時のイベントハンドラ
    */
@@ -48,7 +49,6 @@ const CartProduct = ({
   id,
   imageUrl,
   title,
-  price,
   onBuyButtonClick,
   onRemoveButtonClick,
 }: CartProductProps) => {
@@ -84,9 +84,6 @@ const CartProduct = ({
                 as="p"
               >
                 {title}
-              </Text>
-              <Text margin={0} as="p">
-                {price}円
               </Text>
             </Box>
             <Flex marginTop={{ base: 2, md: 0 }}>

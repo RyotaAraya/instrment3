@@ -56,7 +56,7 @@ const ProductCardListContainer = ({
                 <ProductCard
                   variant="listing"
                   title={p.title}
-                  price={p.price}
+                  progress={p.progress}
                   imageUrl={p.imageUrl}
                   blurDataUrl={p.blurDataUrl}
                 />

@@ -28,7 +28,7 @@ const HomePage: NextPage<HomePageProps> = ({
                 <ProductCard
                   variant="small"
                   title={p.title}
-                  price={p.price}
+                  progress={p.progress}
                   imageUrl={p.imageUrl}
                   blurDataUrl={p.blurDataUrl}
                 />

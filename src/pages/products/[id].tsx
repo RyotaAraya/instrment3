@@ -87,7 +87,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             <ProductCard
               variant="detail"
               title={product.title}
-              price={product.price}
+              progress={product.progress}
               imageUrl={product.imageUrl}
             />
           </Flex>
