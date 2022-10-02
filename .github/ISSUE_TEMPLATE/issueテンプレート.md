@@ -17,5 +17,4 @@ assignees: ''
 
 ## タスク
 
-- [] xxx
-- [] xxx
+- [ ] xxx
