@@ -50,15 +50,9 @@ describe('ProductForm', () => {
 
       // 計器情報を入力
       const inputPasswordNode = screen.getByPlaceholderText(
-        /指示値振れが頻発 ±10%/,
+        /指示値振れ頻発/,
       ) as HTMLInputElement
       fireEvent.change(inputPasswordNode, { target: { value: 'テストテスト' } })
-
-      // 価格を入力
-      const inputPriceNode = screen.getByPlaceholderText(
-        /100/,
-      ) as HTMLInputElement
-      fireEvent.change(inputPriceNode, { target: { value: '100' } })
 
       // 不具合計器登録ボタンをクリック
       fireEvent.click(screen.getByText('不具合計器登録'))

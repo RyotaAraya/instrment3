@@ -8,7 +8,6 @@ import Spinner from 'components/atoms/Spinner'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
-import BadgeIconButton from 'components/molecules/BadgeIconButton'
 import { useAuthContext } from 'contexts/AuthContext'
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 
@@ -109,17 +108,24 @@ const Header = () => {
               // 認証していたらアイコンを表示
               if (authUser) {
                 return (
-                  <Link href={`/users/${authUser.id}`} passHref>
-                    <Anchor as="a">
-                      <ShapeImage
-                        shape="circle"
-                        src={authUser.profileImageUrl}
-                        width={24}
-                        height={24}
-                        data-testid="profile-shape-image"
-                      />
-                    </Anchor>
-                  </Link>
+                  <>
+                    <Link href={`/users/${authUser.id}`} passHref>
+                      <Anchor as="a">
+                        <ShapeImage
+                          shape="circle"
+                          src={authUser.profileImageUrl}
+                          width={24}
+                          height={24}
+                          data-testid="profile-shape-image"
+                        />
+                      </Anchor>
+                    </Link>
+                    <Link href="/sell" passHref>
+                      <Button as="a" data-testid="profile-button">
+                        不具合計器登録
+                      </Button>
+                    </Link>
+                  </>
                 )
               } else if (isLoading) {
                 // ロード中はスピナーを表示
@@ -135,11 +141,6 @@ const Header = () => {
                 )
               }
             })()}
-          </NavLink>
-          <NavLink>
-            <Link href="/sell" passHref>
-              <Button as="a">不具合計器登録</Button>
-            </Link>
           </NavLink>
         </Nav>
       </Flex>
