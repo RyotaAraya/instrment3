@@ -106,14 +106,14 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            計器名
+            不具合計器名
           </Text>
           {/* 計器タイトルの入力 */}
           <Input
             {...register('title', { required: true })}
             name="title"
             type="text"
-            placeholder="流量計1"
+            placeholder="不具合計器名"
             hasError={!!errors.title}
           />
           {errors.title && (

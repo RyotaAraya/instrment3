@@ -24,26 +24,14 @@ const authUser: User = {
   description: '',
 }
 
-// ダミー計器
-const product: Product = {
-  id: 1,
-  category: 'flowmeter',
-  title: 'Product',
-  description: '',
-  imageUrl: '/images/sample/1.jpg',
-  blurDataUrl: '',
-  progress: 'done',
-  owner: authUser,
-}
-
 describe('Header', () => {
   let renderResult: RenderResult
   const useShoppingCartContextMock =
     useShoppingCartContext as jest.MockedFunction<typeof useShoppingCartContext>
 
-  it('カートに計器が存在する', async () => {
+  it('サインイン', async () => {
     useShoppingCartContextMock.mockReturnValue({
-      cart: [product],
+      cart: [],
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       addProductToCart: () => {},
       // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -63,8 +51,9 @@ describe('Header', () => {
       </ThemeProvider>,
     )
 
-    // カートに入っている（バッジが出てる）
-    expect(screen.getAllByTestId('badge-wrapper').length).toBeGreaterThan(0)
+    // サインインしている
+    expect(screen.queryByTestId('profile-shape-image')).toBeTruthy()
+    expect(screen.queryByTestId('profile-button')).toBeTruthy()
 
     renderResult.unmount()
     useShoppingCartContextMock.mockReset()
@@ -91,9 +80,6 @@ describe('Header', () => {
 
     // サインインしていない
     expect(screen.queryByTestId('profile-shape-image')).toBeNull()
-
-    // カートが空
-    expect(screen.queryByTestId('badge-wrapper')).toBeNull()
 
     renderResult.unmount()
     useShoppingCartContextMock.mockReset()
