@@ -2,7 +2,7 @@
 name: issueテンプレート
 about: issue作成時のテンプレートです
 title: ''
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---
